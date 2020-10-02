@@ -46,6 +46,8 @@ class PyzoPyUNOWorkspace(QtWidgets.QWidget):
         self._config = pyzo.config.tools[toolId]
 
         # Set config
+        if not hasattr(self._config, "clearScreenAfter"):
+            self._config.clearScreenAfter = False
         if not hasattr(self._config, "hideTypes"):
             self._config.hideTypes = []
         #
